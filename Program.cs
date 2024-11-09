@@ -10,4 +10,12 @@ Console.WriteLine("\nChallange: Avoid the bad guys ( % ) to survive");
 Console.WriteLine("\n===============================GOOD LUCK ================================");
 Console.ReadLine();
 Console.Clear();
+
+
+string[] mapRows = File.ReadAllLines("maze.txt");
+Console.Clear();
 Console.WriteLine("================================= MAZE #2 ================================");
+foreach (string row in mapRows)
+{
+    Console.WriteLine(row);
+}
