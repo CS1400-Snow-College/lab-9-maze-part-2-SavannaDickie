@@ -11,7 +11,6 @@ Console.WriteLine("\n===============================GOOD LUCK ==================
 Console.ReadLine();
 
 
-
 string[] mapRows = File.ReadAllLines("maze.txt");
 Console.Clear();
 //Console.WriteLine("================================= MAZE #2 ================================");
@@ -31,6 +30,17 @@ do
     else if (Key == ConsoleKey.DownArrow) {cursorTop ++;}
     else if (Key == ConsoleKey.LeftArrow) {cursorLeft--;}
     else if (Key == ConsoleKey.RightArrow) {cursorLeft++;}
-    Console.SetCursorPosition(cursorLeft, cursorTop);
+    //Console.SetCursorPosition(cursorLeft, cursorTop);
+    TryMove(cursorTop, cursorLeft, mapRows);
     
 } while(true);
+
+static void TryMove(int cursorTop, int cursorLeft, string[] mapRows)
+{
+    if (cursorTop >= 0 && cursorTop < mapRows.Length && cursorLeft >= 0
+    && cursorLeft < mapRows[cursorTop].Length && mapRows[cursorTop][cursorLeft] 
+    != '*' && cursorTop < Console.BufferHeight && cursorLeft < Console.BufferWidth)
+    {
+        Console.SetCursorPosition(cursorLeft, cursorTop);
+    }
+}
