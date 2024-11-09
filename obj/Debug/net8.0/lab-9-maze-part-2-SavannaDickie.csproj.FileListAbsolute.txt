@@ -1,0 +1,15 @@
+/Users/personal3/Downloads/code/mycodedir/lab-9-maze-part-2-SavannaDickie/obj/Debug/net8.0/lab-9-maze-part-2-SavannaDickie.GeneratedMSBuildEditorConfig.editorconfig
+/Users/personal3/Downloads/code/mycodedir/lab-9-maze-part-2-SavannaDickie/obj/Debug/net8.0/lab-9-maze-part-2-SavannaDickie.AssemblyInfoInputs.cache
+/Users/personal3/Downloads/code/mycodedir/lab-9-maze-part-2-SavannaDickie/obj/Debug/net8.0/lab-9-maze-part-2-SavannaDickie.AssemblyInfo.cs
+/Users/personal3/Downloads/code/mycodedir/lab-9-maze-part-2-SavannaDickie/obj/Debug/net8.0/lab-9-maze-part-2-SavannaDickie.csproj.CoreCompileInputs.cache
+/Users/personal3/Downloads/code/mycodedir/lab-9-maze-part-2-SavannaDickie/obj/Debug/net8.0/lab-9-maze-part-2-SavannaDickie.sourcelink.json
+/Users/personal3/Downloads/code/mycodedir/lab-9-maze-part-2-SavannaDickie/bin/Debug/net8.0/lab-9-maze-part-2-SavannaDickie
+/Users/personal3/Downloads/code/mycodedir/lab-9-maze-part-2-SavannaDickie/bin/Debug/net8.0/lab-9-maze-part-2-SavannaDickie.deps.json
+/Users/personal3/Downloads/code/mycodedir/lab-9-maze-part-2-SavannaDickie/bin/Debug/net8.0/lab-9-maze-part-2-SavannaDickie.runtimeconfig.json
+/Users/personal3/Downloads/code/mycodedir/lab-9-maze-part-2-SavannaDickie/bin/Debug/net8.0/lab-9-maze-part-2-SavannaDickie.dll
+/Users/personal3/Downloads/code/mycodedir/lab-9-maze-part-2-SavannaDickie/bin/Debug/net8.0/lab-9-maze-part-2-SavannaDickie.pdb
+/Users/personal3/Downloads/code/mycodedir/lab-9-maze-part-2-SavannaDickie/obj/Debug/net8.0/lab-9-maze-part-2-SavannaDickie.dll
+/Users/personal3/Downloads/code/mycodedir/lab-9-maze-part-2-SavannaDickie/obj/Debug/net8.0/refint/lab-9-maze-part-2-SavannaDickie.dll
+/Users/personal3/Downloads/code/mycodedir/lab-9-maze-part-2-SavannaDickie/obj/Debug/net8.0/lab-9-maze-part-2-SavannaDickie.pdb
+/Users/personal3/Downloads/code/mycodedir/lab-9-maze-part-2-SavannaDickie/obj/Debug/net8.0/lab-9-maze-part-2-SavannaDickie.genruntimeconfig.cache
+/Users/personal3/Downloads/code/mycodedir/lab-9-maze-part-2-SavannaDickie/obj/Debug/net8.0/ref/lab-9-maze-part-2-SavannaDickie.dll
