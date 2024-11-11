@@ -3,11 +3,14 @@
 // Savanna Dickie
 // 11/09/2024
 // Lab 9: Maze #2
+using System.Diagnostics;
 using System.Net.NetworkInformation;
+using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography.X509Certificates;
 using System.Security.Principal;
 
 Console.Clear();
+Stopwatch stopwatch = new Stopwatch();
 Console.WriteLine("================================= MAZE #2 ================================");
 Console.WriteLine("\nObjective: Collect all 10 coins ( ^ ) to open the gate to gather gems ( $ ).");
 Console.WriteLine("\nChallange: Avoid the bad guys ( % ) to survive");
@@ -17,6 +20,7 @@ Console.ReadLine();
 
 string[] mapRows = File.ReadAllLines("maze.txt");
 Console.Clear();
+stopwatch.Start();
 //int score = 0;
 //Console.WriteLine($"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nScore: {score}");
 //Console.WriteLine("================================= MAZE #2 ================================");
@@ -24,6 +28,7 @@ foreach (string row in mapRows)
 {
     Console.WriteLine($"{row}");
 }
+//Stopwatch stopwatch = new Stopwatch();
 int score = 0;
 Console.SetCursorPosition(0, mapRows.Length + 1);
 Console.WriteLine($"Score: {score}  ");
@@ -56,6 +61,10 @@ do
         Console.WriteLine("Game Over!");
         break;
     }
+    else if (mapRows[cursorTop][cursorLeft] == '#')
+    {
+            break;
+    }
     //if (score == 1000)
     //{
      //   mapRows[y] = mapRows[y].Replace('%', ' ');
@@ -70,6 +79,11 @@ do
     
     
 } while(true); 
+stopwatch.Stop();
+Console.Clear();
+Console.WriteLine($"Time: {stopwatch.ElapsedMilliseconds/1000}");
+Console.WriteLine($"score: {score}");
+Console.WriteLine($"you won the maze!");
 
 //Console.WriteLine($"Score: {score}");
 
@@ -116,11 +130,15 @@ static bool TryMove(int cursorTop,int cursorLeft, string[] mapRows, ref int scor
             Console.Write(mapRows[i]);
             }
         }
+        
+        
         Console.SetCursorPosition(cursorLeft, cursorTop);
         return true;
         //Console.Write('@');
         
+        
     }
+    
     return true;
     
 }
