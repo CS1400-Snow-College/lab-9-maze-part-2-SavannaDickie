@@ -5,6 +5,7 @@
 // Lab 9: Maze #2
 using System.Net.NetworkInformation;
 using System.Security.Cryptography.X509Certificates;
+using System.Security.Principal;
 
 Console.Clear();
 Console.WriteLine("================================= MAZE #2 ================================");
@@ -55,6 +56,10 @@ do
         Console.WriteLine("Game Over!");
         break;
     }
+    //if (score == 1000)
+    //{
+     //   mapRows[y] = mapRows[y].Replace('%', ' ');
+    //}
     int savedCursorLeft = Console.CursorLeft;
     int savedCursorTop = Console.CursorTop;
  
@@ -89,6 +94,27 @@ static bool TryMove(int cursorTop,int cursorLeft, string[] mapRows, ref int scor
         mapRows[cursorTop] = new string(row);
         Console.SetCursorPosition(0, mapRows.Length + 1);
         Console.WriteLine($"score: {score}   ");
+        }
+        if (mapRows[cursorTop][cursorLeft] == '$')
+        {
+            score += 200;
+        //Console.SetCursorPosition(0, mapRows.Length + 1);
+        //Console.WriteLine($"score: {score}");
+        char[] row = mapRows[cursorTop].ToCharArray();
+        row[cursorLeft] = ' ';
+        mapRows[cursorTop] = new string(row);
+        Console.SetCursorPosition(0, mapRows.Length + 1);
+        Console.WriteLine($"score: {score}   ");
+        }
+        if(score >= 1000)
+        //for( int i = 0; i < mapRows.Length; i++)
+        {
+             for( int i = 0; i < mapRows.Length; i++)
+             {
+            mapRows[i] = mapRows[i].Replace('|', ' ');
+            Console.SetCursorPosition(0, i);
+            Console.Write(mapRows[i]);
+            }
         }
         Console.SetCursorPosition(cursorLeft, cursorTop);
         return true;
