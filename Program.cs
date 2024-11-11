@@ -16,13 +16,21 @@ Console.ReadLine();
 
 string[] mapRows = File.ReadAllLines("maze.txt");
 Console.Clear();
+//int score = 0;
+//Console.WriteLine($"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nScore: {score}");
 //Console.WriteLine("================================= MAZE #2 ================================");
 foreach (string row in mapRows)
 {
-    Console.WriteLine(row);
+    Console.WriteLine($"{row}");
 }
-
+int score = 0;
+Console.SetCursorPosition(0, mapRows.Length + 1);
+Console.WriteLine($"Score: {score}  ");
+//int score = 0;
+//Console.WriteLine($"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nScore: {score}");
 Console.SetCursorPosition(0,0);
+////int score = 0;
+//Console.WriteLine($"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nScore: {score}");
 
 do
 {
@@ -38,25 +46,57 @@ do
     else if (Key == ConsoleKey.LeftArrow) {cursorLeft--;}
     else if (Key == ConsoleKey.RightArrow) {cursorLeft++;}
     
-    TryMove(cursorTop, cursorLeft, mapRows);
+    bool gameContinues = TryMove(cursorTop, cursorLeft, mapRows,ref score);
+    
+    if (!gameContinues)
+    {
+        Console.Clear();
+        Console.WriteLine("The bad guy killed you.");
+        Console.WriteLine("Game Over!");
+        break;
+    }
     int savedCursorLeft = Console.CursorLeft;
     int savedCursorTop = Console.CursorTop;
  
     BadGuys(mapRows);
     Console.SetCursorPosition(savedCursorLeft, savedCursorTop);
+
+    
     
     
 } while(true); 
 
-static void TryMove(int cursorTop,int cursorLeft, string[] mapRows)
+//Console.WriteLine($"Score: {score}");
+
+static bool TryMove(int cursorTop,int cursorLeft, string[] mapRows, ref int score)
 {
     if (cursorTop >= 0 && cursorTop < mapRows.Length && cursorLeft >= 0
     && cursorLeft < mapRows[cursorTop].Length && mapRows[cursorTop][cursorLeft] 
     != '*' && cursorTop < Console.BufferHeight && cursorLeft < Console.BufferWidth)
     {
+        if(mapRows[cursorTop][cursorLeft] == '%')
+        {
+            return false;
+        }
+        //int score = 0;
+        if (mapRows[cursorTop][cursorLeft] == '^')
+        {
+            score += 100;
+        //Console.SetCursorPosition(0, mapRows.Length + 1);
+        //Console.WriteLine($"score: {score}");
+        char[] row = mapRows[cursorTop].ToCharArray();
+        row[cursorLeft] = ' ';
+        mapRows[cursorTop] = new string(row);
+        Console.SetCursorPosition(0, mapRows.Length + 1);
+        Console.WriteLine($"score: {score}   ");
+        }
         Console.SetCursorPosition(cursorLeft, cursorTop);
+        return true;
         //Console.Write('@');
+        
     }
+    return true;
+    
 }
 
 static void BadGuys(string[] mapRows)
